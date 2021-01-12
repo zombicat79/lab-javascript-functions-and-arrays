@@ -1,18 +1,87 @@
+// By Clement Vallat & David Castejón
 // Iteration #1: Find the maximum
+
+function maxOfTwoNumbers(num1, num2) { 
+  if (num1>num2) {
+    return num1;
+  } else {
+    return num2;
+  } 
+}
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-// Iteration #3: Calculate the sum
+function findLongestWord(words){
+  var wordLength=0; 
+  var longestWord="";
+    if(words.length === 0){
+      return null; 
+    } else {
+      for (let i=0; i<words.length; i++){
+        if(words[i].length>wordLength){
+          wordLength = words[i].length;
+          longestWord = words[i];
+        }
+      } 
+      return longestWord;
+}
+}
 
+// Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+function sumNumbers(numbers) {
+  let sum = 0;
+  if (numbers.length === 0) {
+    return 0;
+  }
+  if (numbers.length === 1) {
+    sum = numbers[0];
+    return sum;
+  }
+  else {
+    for (let i = 0; i < numbers.length; i++) {
+      sum = sum + numbers[i];
+    }
+    return sum;
+  }
+}
+
+sumNumbers(numbers);
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
+function averageNumbers(numbersAvg) {
+  let result = 0;
+  if (numbersAvg.length === 0) {
+    return null;
+  }
+  result = sumNumbers(numbersAvg) / numbersAvg.length;
+  return result;
+
+}
+
+averageNumbers(numbersAvg);
+
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+
+function averageWordLength (wordsArr) {
+  let count = [];
+  if (wordsArr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < wordsArr.length; i++) {
+    count.push(wordsArr[i].length); 
+  }
+  averageNumbers(count);
+  return averageNumbers(count);
+}
+
+averageWordLength(wordsArr);
 
 // Iteration #5: Unique arrays
 const wordsUnique = [
